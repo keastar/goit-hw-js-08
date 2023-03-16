@@ -11,15 +11,12 @@ const refs = {
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
-// refs.textarea.addEventListener('input', throttle(onTextareaInput, 500));
 refs.form.addEventListener('input', throttle(onFormInput, 500));
     
 function onFormInput(e) {
 
     formData[e.target.name] = e.target.value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-    // console.log(formData);
-
 };
 
 populateForm();
